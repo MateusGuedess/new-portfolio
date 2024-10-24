@@ -15,6 +15,7 @@ export default function Home() {
                     animate={{ y: -10, opacity: 1 }}
                     exit={{ y:-100, opacity: 0 }}
                     transition={{ type: "spring", delay: 0.5, dumping: 100}}
+                    layoutId="name"
                 >
                     Mateus Guedes
                 </motion.p>}
@@ -29,45 +30,7 @@ export default function Home() {
                 />
             </h1>
         </div>
-        <div className="ml-auto flex flex-col items-start gap-5">
-            <motion.button
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: -10, opacity: 1 }}
-                exit={{ y:-100, opacity: 0 }}
-                transition={{ type: "spring", delay: 1, dumping: 100}}
-                whileHover={{
-                    x: -10,
-                }}
-            >About</motion.button>
-            <motion.button
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: -10, opacity: 1 }}
-                exit={{ y:-100, opacity: 0 }}
-                transition={{ type: "spring", delay: 0.75, dumping: 100}}
-                whileHover={{
-                    x: -10,
-                }}
-            >Stack & Skills</motion.button>
-            <motion.button
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: -10, opacity: 1 }}
-                exit={{ y:-100, opacity: 0 }}
-                transition={{ type: "spring", delay: 0.5, dumping: 100}}
-                whileHover={{
-                    x: -10,
-                }}
-            >Experience</motion.button>
-            <motion.button
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: -10, opacity: 1 }}
-                exit={{ y:-100, opacity: 0 }}
-                transition={{ type: "spring", delay: 0.25, dumping: 100}}
-                whileHover={{
-                    x: -10,
-                }}
-            >Curriculum Vitae</motion.button>
 
-        </div>
     </div>
   );
 }

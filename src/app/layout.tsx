@@ -1,6 +1,7 @@
 'use client'
 import { AnimatePresence, motion } from "framer-motion";
 import localFont from "next/font/local";
+import Link from "next/Link";
 import Github from "./components/Github";
 import Instagram from "./components/Instagram";
 import Linkedin from "./components/Linkedin";
@@ -18,6 +19,8 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const MotionLink = motion(Link)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,6 +33,45 @@ export default function RootLayout({
       >
         <main className=" w-full flex flex-col gap-2 row-start-2 items-center sm:items-start">
             {children}
+            <div className="ml-auto flex flex-col items-start gap-5">
+                <MotionLink
+                    href="/about"
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: -10, opacity: 1 }}
+                    exit={{ y:-100, opacity: 0 }}
+                    transition={{ type: "spring", delay: 1, dumping: 100}}
+                    whileHover={{
+                        x: -10,
+                    }}
+                >About</MotionLink>
+                <motion.button
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: -10, opacity: 1 }}
+                    exit={{ y:-100, opacity: 0 }}
+                    transition={{ type: "spring", delay: 0.75, dumping: 100}}
+                    whileHover={{
+                        x: -10,
+                    }}
+                >Stack & Skills</motion.button>
+                <motion.button
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: -10, opacity: 1 }}
+                    exit={{ y:-100, opacity: 0 }}
+                    transition={{ type: "spring", delay: 0.5, dumping: 100}}
+                    whileHover={{
+                        x: -10,
+                    }}
+                >Experience</motion.button>
+                <motion.button
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: -10, opacity: 1 }}
+                    exit={{ y:-100, opacity: 0 }}
+                    transition={{ type: "spring", delay: 0.25, dumping: 100}}
+                    whileHover={{
+                        x: -10,
+                    }}
+                >Curriculum Vitae</motion.button>
+            </div>
         </main>
         <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
             <AnimatePresence>
